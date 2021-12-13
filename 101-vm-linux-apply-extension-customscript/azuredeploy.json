@@ -8,7 +8,7 @@
       "metadata": {
         "description": "Name of the existing VM to apply Linux custom script to"
       },
-      "defaultValue": "[substring(concat('simplelinuxvm',resourceGroup().Name),0,14)]"
+      "defaultValue": "[substring(concat('simplelinuxvm',resourceGroup().PrathibhaRG),0,14)]"
     }
   },
   "variables": {
@@ -16,8 +16,8 @@
   "resources": [
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(parameters('vmName'),'/LinuxCustomScriptExtension')]",
-      "location": "[resourceGroup().location]",
+      "name": "[concat(parameters('Sample'),'/LinuxCustomScriptExtension')]",
+      "location": "[resourceGroup().East US]",
       "properties": {
         "publisher": "Microsoft.OSTCExtensions",
         "type": "CustomScriptForLinux",
